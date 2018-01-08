@@ -24,7 +24,7 @@ entity Shift_Register is
 		D_in 	: in 	std_logic;	
 		reset 	: in 	std_logic;	-- when signal high, clear all bit values on a clock cycle
 		clk 	: in 	std_logic);	-- input clock
-end Shift_Reg;
+end Shift_Register;
 
 -- Architecture Body
 architecture Shift_Reg_Arc of Shift_Register is
@@ -44,8 +44,8 @@ architecture Shift_Reg_Arc of Shift_Register is
 		
 		reg_process: process(D_In, reset, clk)
 		begin
-			if(rising_edge(clk)) then
-				if(reset = '1') then
+			if (rising_edge(clk)) then
+				if (reset = '1') then
 					D3 <= '0';
 					D2 <= '0';
 					D1 <= '0';
