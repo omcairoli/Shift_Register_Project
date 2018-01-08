@@ -1,8 +1,13 @@
--------------------------------------------------------------------------------
--- File:		      Shift_Register.vhd
--- Engineer:		  Oscar Cairoli
--- Description:	  4-bit shift register using a behavioral architecture.
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+-- File:	Shift_Register.vhd
+-- Engineer:	Oscar Cairoli
+-- Description:	4-bit shift register using a behavioral architecture.
+-- OS:		Linux (Ubuntu) Terminal Command Lines with Digilent Adept and Basys2 FPGA:
+--		$ djtgcfg enum						// The "enum" command enumerates the devices (-d)
+--		$ djtgcfg init -d Basys2                        	// The "init" command initializes the device for use
+--		$ djtgcfg prog -d Basys2 -i 0 -f Full_Adder.vhd 	// The "prog" command programs an interface (-i) on 
+-- 									// a device (-d) with the .bit file (-f)
+-----------------------------------------------------------------------------------------------------------------------------
 
 -- Libraries
 library IEEE;
@@ -12,10 +17,10 @@ use IEEE.numeric_std.all;
 -- Entity Declaration
 entity Shift_Register is
 	port (
-		Q3		: out 	std_logic;	
-		Q2		: out 	std_logic;	
-		Q1		: out 	std_logic;	
-		Q0		: out	std_logic;	
+		Q3	: out 	std_logic;	
+		Q2	: out 	std_logic;	
+		Q1	: out 	std_logic;	
+		Q0	: out	std_logic;	
 		D_in 	: in 	std_logic;	
 		reset 	: in 	std_logic;	-- when signal high, clear all bit values on a clock cycle
 		clk 	: in 	std_logic);	-- input clock
@@ -37,7 +42,7 @@ architecture Shift_Reg_Arc of Shift_Register is
 		Q1 <= D1;
 		Q0 <= D0;		
 		
-		reg_process: process(D_In,reset,clk)
+		reg_process: process(D_In, reset, clk)
 		begin
 			if(rising_edge(clk)) then
 				if(reset = '1') then
