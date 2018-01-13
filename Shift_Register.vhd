@@ -5,7 +5,7 @@
 -- OS:		Linux (Ubuntu) Terminal Command Lines with Digilent Adept and Basys2 FPGA:
 --		$ djtgcfg enum						// The "enum" command enumerates the devices (-d)
 --		$ djtgcfg init -d Basys2                        	// The "init" command initializes the device for use
---		$ djtgcfg prog -d Basys2 -i 0 -f Shift_Register.vhd 	// The "prog" command programs an interface (-i) on 
+--		$ djtgcfg prog -d Basys2 -i 0 -f Shift_Reg.bit 		// The "prog" command programs an interface (-i) on 
 -- 									// a device (-d) with the .bit file (-f)
 -----------------------------------------------------------------------------------------------------------------------------
 
